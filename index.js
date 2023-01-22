@@ -99,6 +99,7 @@ const picHandler = (req, res) => {
                 if (code == 0 && !batch) {
                     res.download(fullFileName, (err) => {
                         if (!err) {
+                            console.log("deleting: ", fullFileName);
                             command = `rm -rf ${fullFileName}`;
                             exec(command, undefined);
                         } else {
