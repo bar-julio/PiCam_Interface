@@ -101,6 +101,8 @@ const picHandler = (req, res) => {
                         if (!err) {
                             command = `rm -rf ${fullFileName}`;
                             exec(command, undefined);
+                        } else {
+                            console.error("err: ", err);
                         }
                     });
                 }
